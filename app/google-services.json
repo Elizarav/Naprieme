@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "779042327238",
+    "project_id": "naprieme-abb4b",
+    "storage_bucket": "naprieme-abb4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779042327238:android:17afa5508402ba136f25c7",
+        "android_client_info": {
+          "package_name": "com.example.naprieme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779042327238-jpmt5pdhcjbvt0464mkpq9bcacerfvuu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqDvEF01BdUy0Tpj4e_LiHKMT1qfLtLHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779042327238-jpmt5pdhcjbvt0464mkpq9bcacerfvuu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
