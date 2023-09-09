@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.naprieme.MainActivity
 import com.example.naprieme.R
+import com.example.naprieme.utilits.APP_ACTIVITY
 
 
 open class BaseChangeFragment(val layout: Int) : Fragment(layout) {
@@ -17,7 +18,7 @@ open class BaseChangeFragment(val layout: Int) : Fragment(layout) {
     override fun onStart() {
         super.onStart()
         setHasOptionsMenu(true)
-        (activity as MainActivity).mAppDrawer.disableDrawer()
+        (APP_ACTIVITY).mAppDrawer.disableDrawer()
     }
 
     override fun onStop() {
@@ -25,7 +26,7 @@ open class BaseChangeFragment(val layout: Int) : Fragment(layout) {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.settings_menu_confirm, menu)
+        (APP_ACTIVITY).menuInflater.inflate(R.menu.settings_menu_confirm, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

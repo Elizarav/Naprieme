@@ -1,14 +1,9 @@
 package com.example.naprieme.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.example.naprieme.MainActivity
 import com.example.naprieme.R
 import com.example.naprieme.databinding.FragmentChangeUsernameBinding
 import com.example.naprieme.utilits.AppValueEventListener
@@ -16,11 +11,10 @@ import com.example.naprieme.utilits.CHILD_USERNAME
 import com.example.naprieme.utilits.NODE_USERNAMES
 import com.example.naprieme.utilits.NODE_USERS
 import com.example.naprieme.utilits.REF_DATABASE_ROOT
-import com.example.naprieme.utilits.UID
+import com.example.naprieme.utilits.CURRENT_UID
 import com.example.naprieme.utilits.USER
 import com.example.naprieme.utilits.showToast
 import java.util.Locale
-import kotlin.concurrent.fixedRateTimer
 
 
 class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_username) {
@@ -60,7 +54,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
     }
 
     private fun changeUsername() {
-        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(mNewUsername).setValue(UID)
+        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(mNewUsername).setValue(CURRENT_UID)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     updateCurrentUsername()
@@ -70,7 +64,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
     }
 
     private fun updateCurrentUsername() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME)
+        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME)
             .setValue(mNewUsername)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
